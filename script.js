@@ -41,3 +41,17 @@ document.querySelector(".check").addEventListener("click", function () {
         document.querySelector(".number").textContent = secretNumber;
     }
 });
+
+// Try again button event
+document.querySelector(".again").addEventListener("click", function () {
+    scoreLeft = 20;
+    secretNumber = Math.trunc(Math.random() * 20 + 1);
+    console.log(`The secret number is ${secretNumber}`);
+    document.querySelector("body").style.backgroundColor = "#000";
+    document.querySelector(".score").textContent = scoreLeft;
+    document.querySelector(".check").style.display = "block";
+    document.querySelector(".message").textContent = "Start guessing...";
+    document.querySelector(".guess").value = "";
+    document.querySelector(".number").width = "15rem";
+    document.querySelector(".number").textContent = "?";
+});
